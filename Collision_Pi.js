@@ -14,6 +14,13 @@ let start_M_y = 250;
 
 let counts = 0;
 
+// let clack;
+
+// function preload() {
+//     soundFormats('wav');
+//     clack = loadSound('click.wav');
+//   }
+
 function setup(){
     background(255);
     createCanvas(800, 400);
@@ -50,9 +57,6 @@ function draw(){
         rect(start_M_x, start_M_y, size_2/2, size_2/2)
         // Fisrt Block collision with the wall
         if (start_m_x - size_1/2 > 50 && counts % 2 === 0){
-            // start_m_x += v_1;
-
-            // v_1 = 1;
             fill(255,0,0);
             rect(start_m_x, start_m_y, size_1/2, size_1/2); // First Block
         }
@@ -62,6 +66,7 @@ function draw(){
             v_1 = - v_1;
             fill(255,0,0);
             rect(start_m_x, start_m_y, size_1/2, size_1/2); // First Block
+            // clack.play();
         }
 
         if ((start_m_x + size_1/2) >= (start_M_x - size_2/2)){
@@ -71,6 +76,7 @@ function draw(){
             let V_primo = (2*m*v_1 + V*(M-m))/(M+m);
             v_1 = v_1_primo;
             V = V_primo;
+            // clack.play();
             // console.log(v_1, V);
         }
 
