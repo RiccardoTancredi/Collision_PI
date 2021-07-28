@@ -56,17 +56,17 @@ function draw(){
         fill(255, 0, 0);
         rect(start_M_x, start_M_y, size_2/2, size_2/2)
         // Fisrt Block collision with the wall
-        if (start_m_x - size_1/2 > 50 && counts % 2 === 0){
-            fill(255,0,0);
-            rect(start_m_x, start_m_y, size_1/2, size_1/2); // First Block
-        }
-        else if (start_m_x - size_1/2 <= 50){
+        if (start_m_x - size_1/2 <= 50){
             start_m_x = 50 + size_1/2;
             counts += 1;
             v_1 = - v_1;
             fill(255,0,0);
             rect(start_m_x, start_m_y, size_1/2, size_1/2); // First Block
             // clack.play();
+        }
+        if (start_m_x - size_1/2 > 50 && counts % 2 === 0){
+            fill(255,0,0);
+            rect(start_m_x, start_m_y, size_1/2, size_1/2); // First Block
         }
 
         if ((start_m_x + size_1/2) >= (start_M_x - size_2/2)){
